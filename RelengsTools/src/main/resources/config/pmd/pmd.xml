@@ -1,0 +1,140 @@
+<ruleset name="Custom Rules"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>
+
+    <description>RelengTool PMD code analyses rules</description>
+
+
+    <!--     brest practices  -->
+    <rule ref="category/java/bestpractices.xml">
+        <exclude name="GuardLogStatement"/>
+        <exclude name="AvoidUsingHardCodedIP"/>
+        <exclude name="UnusedImports"/>
+        <exclude name="UseVarargs"/>
+    </rule>
+
+    <rule ref="category/java/bestpractices.xml/JUnitTestContainsTooManyAsserts">
+        <properties>
+            <property name="maximumAsserts" value="3" />
+        </properties>
+    </rule>
+
+    <!--     error prone rules -->
+    <rule ref="category/java/errorprone.xml">
+        <exclude name="DataflowAnomalyAnalysis"/>
+        <exclude name="MissingSerialVersionUID"/>
+        <exclude name="BeanMembersShouldSerialize"/>
+        <exclude name="CloneThrowsCloneNotSupportedException"/>
+        <exclude name="ProperCloneImplementation"/>
+        <exclude name="CloneMethodMustImplementCloneable"/>
+        <exclude name="CloneMethodReturnTypeMustMatchClassName"/>
+    </rule>
+
+    <rule ref="category/java/errorprone.xml/AvoidDuplicateLiterals">
+        <properties>
+            <property name="skipAnnotations" value="false"/>
+            <property name="exceptionList" value="--- "/>
+        </properties>
+    </rule>
+
+    <!--     code style rules-->
+    <rule ref="category/java/codestyle.xml">
+        <exclude name="MethodArgumentCouldBeFinal"/>
+        <exclude name="LocalVariableCouldBeFinal"/>
+        <exclude name="OnlyOneReturn"/>
+        <exclude name="AtLeastOneConstructor"/>
+        <exclude name="CommentDefaultAccessModifier"/>
+        <exclude name="DefaultPackage"/>
+        <exclude name="EmptyMethodInAbstractClassShouldBeAbstract"/>
+        <exclude name="UnnecessaryAnnotationValueElement"/>
+        <exclude name="ShortVariable"/>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions">
+        <properties>
+            <property name="utilityClassPattern" value="[A-Z][a-zA-Z0-9]+(Utils?|Helper?|.*)"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/LongVariable">
+        <properties>
+            <property name="minimum" value="45"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/codestyle.xml/ShortClassName">
+        <properties>
+            <property name="minimum" value="3"/>
+        </properties>
+    </rule>
+
+    <!--    Documentation rules-->
+    <rule ref="category/java/documentation.xml">
+        <exclude name="CommentSize"/>
+        <exclude name="CommentRequired"/>
+        <exclude name="UncommentedEmptyConstructor"/>
+    </rule>
+
+    <!--    design rules -->
+    <rule ref="category/java/design.xml">
+        <exclude name="LawOfDemeter"/>
+        <exclude name="ExcessiveImports"/>
+        <exclude name="LoosePackageCoupling"/>
+        <exclude name="SingularField"/>
+        <exclude name="CyclomaticComplexity"/>
+        <exclude name="DataClass"/>
+        <exclude name="AvoidCatchingGenericException"/>
+        <exclude name="AvoidRethrowingException"/>
+        <exclude name="NPathComplexity"/>
+        <exclude name="NcssCount"/>
+        <exclude name="UseObjectForClearerAPI"/>
+        <exclude name="ImmutableField"/>
+
+    </rule>
+
+    <rule ref="category/java/design.xml/AvoidDeeplyNestedIfStmts">
+        <properties>
+            <property name="problemDepth" value="4"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="15"/>
+        </properties>
+    </rule>
+
+    <rule ref="category/java/design.xml/TooManyFields">
+        <!--    some gui have lot of fields-->
+        <properties>
+            <property name="maxfields" value="20"/>
+        </properties>
+    </rule>
+
+
+    <!--    Multithreading -->
+    <rule ref="category/java/multithreading.xml">
+        <exclude name="DoubleCheckedLocking"/>
+        <exclude name="NonThreadSafeSingleton"/>
+        <exclude name="UseConcurrentHashMap"/>
+        <exclude name="UseNotifyAllInsteadOfNotify"/>
+        <exclude name="DoNotUseThreads"/>
+
+    </rule>
+
+    <!--    Performance -->
+    <rule ref="category/java/performance.xml">
+        <exclude name="InefficientEmptyStringCheck"/>
+        <exclude name="AvoidInstantiatingObjectsInLoops"/>
+        <exclude name="TooFewBranchesForASwitchStatement"/>
+        <exclude name="SimplifyStartsWith"/>
+    </rule>
+
+    <!--    Security -->
+    <rule ref="category/java/security.xml">
+
+    </rule>
+
+
+</ruleset>
+

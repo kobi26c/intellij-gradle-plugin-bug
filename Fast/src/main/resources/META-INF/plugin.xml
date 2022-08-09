@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>com.video.shortcutplugin</id>
+    <name>Fast Plugin</name>
+    <version>2.738</version>
+
+    <description><![CDATA[
+      plugin that helps selecting a branch and fast build against it via artifactory pre-compiled jars.
+    ]]></description>
+
+    <change-notes>true</change-notes>
+
+    <idea-version since-build="203"/>
+
+
+    <actions>
+
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <depends>Git4Idea</depends>
+    <depends>org.jetbrains.idea.maven</depends>
+    <depends>JUnit</depends>
+<!--    <depends>com.intellij.modules.java</depends>-->
+    <depends>com.intellij.modules.platform</depends>
+    <depends optional="true">com.intellij.java</depends> <!-- only on newer versions of intellij, not in 182 -->
+    <depends optional="true">com.intellij.modules.java</depends>
+</idea-plugin>

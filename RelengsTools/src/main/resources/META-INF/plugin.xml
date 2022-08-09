@@ -1,0 +1,42 @@
+<idea-plugin>
+    <id>com.RelengsTools</id>
+    <name>RelengsTools</name>
+    <version>4.5.8</version>
+    <description><![CDATA[
+    Releng Tools and Actions for development.<br>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+    <depends>com.intellij.database</depends>
+    <depends>Docker</depends>
+    <depends optional="true" config-file="remote.xml">org.jetbrains.plugins.remote-run</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+    </extensions>
+
+    <extensions defaultExtensionNs="Git4Idea">
+    </extensions>
+
+    <extensionPoints>
+        <extensionPoint name="vcsIgnoreChecker"
+                        interface="com.intellij.openapi.vcs.VcsIgnoreChecker"
+                        dynamic="true"/>
+
+    </extensionPoints>
+
+    <actions>
+    </actions>
+
+    <applicationListeners>
+    </applicationListeners>
+
+    <projectListeners>
+    </projectListeners>
+
+    <project-components>
+
+    </project-components>
+</idea-plugin>
+
+
